@@ -246,13 +246,13 @@ main {
 }
 
 .city-highlight {
-  padding: clamp(3rem, 8vw, 5rem) 0 clamp(2rem, 5vw, 3rem);
+  padding: clamp(4rem, 9vw, 6rem) 0 clamp(2rem, 5vw, 3rem);
 }
 
 .city-highlight__inner {
   display: grid;
-  grid-template-columns: minmax(0, 42%) minmax(0, 58%);
-  gap: clamp(2.5rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(0, 34%) minmax(0, 66%);
+  gap: clamp(2rem, 4vw, 3.5rem);
   align-items: center;
   max-width: 75rem;
   margin: 0 auto;
@@ -317,13 +317,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(16rem, 28vw, 24rem);
-  padding: 0.5rem;
+  min-height: clamp(22rem, 42vw, 34rem);
+  padding: 0;
 }
 
 .city-visual img {
   width: 100%;
-  max-width: min(100%, 34rem);
+  max-width: 100%;
+  max-height: clamp(24rem, 48vw, 38rem);
   height: auto;
   display: block;
   object-fit: contain;
@@ -389,6 +390,10 @@ p {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.gems {
+  padding-top: clamp(2.5rem, 6vw, 4rem);
 }
 
 .section-title {
@@ -622,6 +627,14 @@ footer {
 
   .city-panel {
     min-height: auto;
+  }
+
+  .city-visual {
+    min-height: clamp(18rem, 55vw, 26rem);
+  }
+
+  .city-visual img {
+    max-height: clamp(18rem, 55vw, 26rem);
   }
 
   .intro {
