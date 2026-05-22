@@ -251,10 +251,10 @@ main {
 
 .city-highlight__inner {
   display: grid;
-  grid-template-columns: minmax(0, 34%) minmax(0, 66%);
-  gap: clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(14rem, 26%) minmax(0, 74%);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: center;
-  max-width: 75rem;
+  max-width: min(140rem, 98vw);
   margin: 0 auto;
 }
 
@@ -317,17 +317,19 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(22rem, 42vw, 34rem);
+  min-height: clamp(88rem, 120vh, 136rem);
   padding: 0;
+  overflow: visible;
 }
 
 .city-visual img {
   width: 100%;
   max-width: 100%;
-  max-height: clamp(24rem, 48vw, 38rem);
-  height: auto;
+  height: clamp(88rem, 115vh, 152rem);
+  max-height: 152rem;
   display: block;
   object-fit: contain;
+  object-position: center;
 }
 
 .intro {
@@ -630,11 +632,12 @@ footer {
   }
 
   .city-visual {
-    min-height: clamp(18rem, 55vw, 26rem);
+    min-height: clamp(36rem, 85vw, 52rem);
   }
 
   .city-visual img {
-    max-height: clamp(18rem, 55vw, 26rem);
+    height: clamp(36rem, 85vw, 52rem);
+    max-height: 52rem;
   }
 
   .intro {
