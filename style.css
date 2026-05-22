@@ -195,10 +195,10 @@ a {
 }
 
 .hero-content p {
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 700;
-  letter-spacing: 0.06rem;
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  letter-spacing: 0.02em;
+  font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 .hero-content h1 {
@@ -246,87 +246,100 @@ main {
 }
 
 .city-highlight {
-  padding: clamp(4rem, 9vw, 6rem) 0 clamp(2rem, 5vw, 3rem);
+  padding: clamp(4rem, 10vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
 }
 
 .city-highlight__inner {
   display: grid;
-  grid-template-columns: minmax(14rem, 26%) minmax(0, 74%);
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
   align-items: center;
-  max-width: min(140rem, 98vw);
+  max-width: 75rem;
   margin: 0 auto;
 }
 
-.city-panel {
-  background: var(--coral);
-  color: white;
-  padding: clamp(2.5rem, 5vw, 3.5rem);
-  min-height: 22rem;
+.city-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 1.25rem 2.5rem rgba(13, 55, 87, 0.14);
+  align-items: flex-start;
+  text-align: left;
 }
 
-.city-panel h2 {
-  color: white;
-  font-size: clamp(2rem, 4.5vw, 2.8rem);
-  margin-bottom: 0.35rem;
+.city-title {
+  color: var(--blue);
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  text-transform: none;
 }
 
 .city-eyebrow {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--coral);
   text-transform: uppercase;
-  font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+  font-size: clamp(0.72rem, 1.1vw, 0.82rem);
   font-weight: 800;
-  letter-spacing: 0.08em;
-  margin-bottom: 1.25rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
 }
 
 .city-text {
-  color: rgba(255, 255, 255, 0.96);
-  margin-bottom: 1rem;
-  font-size: clamp(0.92rem, 1.25vw, 1rem);
-  line-height: 1.65;
+  color: var(--dark);
+  margin-bottom: 1.15rem;
+  font-size: clamp(0.95rem, 1.25vw, 1.02rem);
+  line-height: 1.7;
+  max-width: 34rem;
 }
 
 .city-text:last-of-type {
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
 }
 
 .btn-over {
   display: inline-block;
-  align-self: flex-start;
-  background: var(--blue);
+  background: var(--coral);
   color: white;
-  padding: 1rem 1.75rem;
+  padding: 1rem 1.85rem;
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  border-radius: 0.15rem;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-over:hover {
-  background: var(--dark);
+  background: #d85a44;
   transform: translateY(-2px);
 }
 
 .city-visual {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(88rem, 120vh, 136rem);
-  padding: 0;
-  overflow: visible;
+  min-height: clamp(18rem, 42vw, 30rem);
+  padding: 1rem 0;
+}
+
+.city-visual__blobs {
+  position: absolute;
+  inset: -8% -5%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 45% at 88% 12%, rgba(238, 245, 247, 0.95) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 95% 88%, rgba(239, 107, 82, 0.14) 0%, transparent 72%),
+    radial-gradient(ellipse 40% 35% at 70% 50%, rgba(238, 245, 247, 0.7) 0%, transparent 68%);
 }
 
 .city-visual img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 100%;
-  height: clamp(88rem, 115vh, 152rem);
-  max-height: 152rem;
+  height: auto;
+  max-height: clamp(22rem, 50vw, 34rem);
   display: block;
   object-fit: contain;
   object-position: center;
@@ -627,17 +640,12 @@ footer {
     gap: 2rem;
   }
 
-  .city-panel {
-    min-height: auto;
-  }
-
   .city-visual {
-    min-height: clamp(36rem, 85vw, 52rem);
+    min-height: clamp(14rem, 50vw, 22rem);
   }
 
   .city-visual img {
-    height: clamp(36rem, 85vw, 52rem);
-    max-height: 52rem;
+    max-height: clamp(16rem, 55vw, 24rem);
   }
 
   .intro {
