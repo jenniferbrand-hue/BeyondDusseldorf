@@ -48,7 +48,7 @@ function searchWebsite() {
   const input = document.querySelector(".search input").value.toLowerCase();
 
   if (input.includes("foto") || input.includes("galerij") || input.includes("event")) {
-    location.href = "#fotogalerij";
+    location.href = "fotogalerij.html";
   } else if (input.includes("over") || input.includes("dusseldorf") || input.includes("düsseldorf")) {
     location.href = "#over-dusseldorf";
   } else {

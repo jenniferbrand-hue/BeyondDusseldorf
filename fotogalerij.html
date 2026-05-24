@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotogalerij — Beyond Düsseldorf</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html#home" class="logo-link">
+    <img src="logo.png" alt="Beyond Düsseldorf logo" class="logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#over-dusseldorf">Over Düsseldorf</a></li>
+    <li><a href="index.html#hidden-gems">Hidden gems</a></li>
+    <li><a href="fotogalerij.html" class="nav-active">Fotogalerij</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<a href="index.html#hidden-gems" class="info-btn">Local<br>tips</a>
+
+<main class="gallery-page">
+  <section class="gallery-section">
+    <header class="gallery-header">
+      <h1>Fotogalerij</h1>
+      <p class="gallery-subtitle">Beelden van Düsseldorf</p>
+    </header>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" hidden aria-hidden="true">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Sluiten">&times;</button>
+  <button type="button" class="lightbox-prev" id="lightbox-prev" aria-label="Vorige foto">&lsaquo;</button>
+  <button type="button" class="lightbox-next" id="lightbox-next" aria-label="Volgende foto">&rsaquo;</button>
+  <div class="lightbox-dialog">
+    <img src="" alt="" id="lightbox-img" class="lightbox-img">
+    <div class="lightbox-info">
+      <h2 id="lightbox-title"></h2>
+      <p class="lightbox-eyebrow" id="lightbox-caption"></p>
+      <p class="lightbox-description" id="lightbox-description"></p>
+    </div>
+  </div>
+</div>
+
+<footer id="contact">
+  <div class="footer-logo-col">
+    <img src="logo.png" alt="Beyond Düsseldorf logo" class="footer-logo">
+  </div>
+  <div class="footer-info">
+    <div class="footer-block">
+      <h4>Beyond Düsseldorf</h4>
+      <p>Ontdek wat anderen missen</p>
+    </div>
+    <div class="footer-block">
+      <h4>Contact</h4>
+      <p><a href="mailto:info@beyonddusseldorf.nl">info@beyonddusseldorf.nl</a></p>
+    </div>
+  </div>
+  <div class="footer-block footer-social">
+    <h4>Volg ons</h4>
+    <ul class="social-links">
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">TikTok</a></li>
+      <li><a href="#">Pinterest</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+<script src="gallery-data.js" defer></script>
+<script src="gallery.js" defer></script>
+</body>
+</html>

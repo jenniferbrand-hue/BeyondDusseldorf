@@ -117,18 +117,17 @@ a {
 
 .logo-link {
   flex: 0 0 auto;
-  height: 100%;
-  align-self: stretch;
+  align-self: center;
   display: flex;
   align-items: center;
-  padding: 0.25rem 0;
+  padding: 0.35rem 0;
 }
 
 .logo {
   width: auto;
-  height: 100%;
-  max-height: 100%;
-  max-width: min(12rem, 32vw);
+  height: auto;
+  max-height: 4rem;
+  max-width: min(9rem, 28vw);
   padding: 0;
   border-radius: 0;
   object-fit: contain;
@@ -154,7 +153,8 @@ a {
   transition: color 0.2s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.nav-active {
   color: var(--coral);
 }
 
@@ -247,22 +247,27 @@ main {
 
 .city-highlight {
   padding: clamp(4rem, 10vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
+  overflow: visible;
 }
 
 .city-highlight__inner {
   display: grid;
-  grid-template-columns: minmax(0, 42%) minmax(0, 58%);
-  gap: clamp(2.5rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(0, 34%) minmax(0, 66%);
+  gap: clamp(1rem, 2vw, 1.5rem);
   align-items: center;
   max-width: 75rem;
   margin: 0 auto;
 }
 
 .city-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  max-width: 26rem;
+  padding: 0.5rem 0;
 }
 
 .city-title {
@@ -314,35 +319,27 @@ main {
 }
 
 .city-visual {
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: clamp(18rem, 42vw, 30rem);
-  padding: 1rem 0;
+  justify-content: flex-end;
+  width: 100%;
+  min-height: clamp(22rem, 45vh, 30rem);
+  overflow: visible;
 }
 
 .city-visual__blobs {
-  position: absolute;
-  inset: -8% -5%;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 55% 45% at 88% 12%, rgba(238, 245, 247, 0.95) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 95% 88%, rgba(239, 107, 82, 0.14) 0%, transparent 72%),
-    radial-gradient(ellipse 40% 35% at 70% 50%, rgba(238, 245, 247, 0.7) 0%, transparent 68%);
+  display: none;
 }
 
 .city-visual img {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: clamp(22rem, 50vw, 34rem);
+  height: clamp(24rem, 50vh, 32rem);
+  width: auto;
+  max-width: none;
   display: block;
   object-fit: contain;
-  object-position: center;
+  object-position: right center;
+  margin-left: auto;
+  transform: translateX(15cm);
 }
 
 .intro {
@@ -620,7 +617,8 @@ footer {
   }
 
   .logo {
-    max-width: min(10rem, 45vw);
+    max-height: 3.5rem;
+    max-width: min(8rem, 40vw);
   }
 
   .nav-links {
@@ -640,12 +638,21 @@ footer {
     gap: 2rem;
   }
 
+  .city-content {
+    max-width: 100%;
+  }
+
   .city-visual {
-    min-height: clamp(14rem, 50vw, 22rem);
+    justify-content: center;
+    min-height: auto;
   }
 
   .city-visual img {
-    max-height: clamp(16rem, 55vw, 24rem);
+    height: clamp(18rem, 55vw, 26rem);
+    margin-left: auto;
+    margin-right: auto;
+    transform: none;
+    object-position: center;
   }
 
   .intro {
@@ -720,5 +727,238 @@ footer {
   .info-btn {
     width: clamp(4.5rem, 14vw, 5.5rem);
     height: calc(var(--nav-height) + clamp(1rem, 3vw, 1.5rem));
+  }
+}
+
+/* Fotogalerij pagina */
+.gallery-page {
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 3rem;
+  min-height: 100vh;
+}
+
+.gallery-section {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 7%, 5rem);
+}
+
+.gallery-header {
+  margin-bottom: 2.5rem;
+}
+
+.gallery-header h1 {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.gallery-subtitle {
+  color: var(--coral);
+  text-transform: uppercase;
+  font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery-card {
+  margin: 0;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--light);
+  display: block;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3rem 1.2rem 1.2rem;
+  background: linear-gradient(transparent, rgba(9, 35, 51, 0.88));
+  color: white;
+  text-align: left;
+  pointer-events: none;
+}
+
+.gallery-overlay h3 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  margin-bottom: 0.35rem;
+  font-weight: 800;
+  color: white;
+}
+
+.gallery-overlay p {
+  margin: 0;
+  font-size: clamp(0.8rem, 1.1vw, 0.92rem);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10002;
+  background: rgba(9, 35, 51, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-dialog {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+  max-width: min(56rem, 96vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #f8f1e7;
+  border-radius: 0.75rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.lightbox-img {
+  width: 100%;
+  max-height: min(70vh, 32rem);
+  object-fit: contain;
+  border-radius: 0.5rem;
+  display: block;
+  background: var(--dark);
+}
+
+.lightbox-info {
+  color: var(--dark);
+  padding-top: 0.25rem;
+}
+
+.lightbox-info h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.lightbox-eyebrow {
+  color: var(--coral);
+  text-transform: uppercase;
+  font-size: clamp(0.72rem, 1.1vw, 0.82rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.lightbox-description {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.25vw, 1.02rem);
+  line-height: 1.7;
+  color: var(--dark);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: var(--coral);
+}
+
+.lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.lightbox-prev {
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .lightbox-dialog {
+    grid-template-columns: 1fr;
+    max-height: 92vh;
+  }
+
+  .lightbox-img {
+    max-height: min(45vh, 22rem);
+  }
+}
+
+@media (max-width: 550px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lightbox-prev {
+    left: 0.75rem;
+  }
+
+  .lightbox-next {
+    right: 0.75rem;
+  }
+
+  .lightbox-dialog {
+    padding: 1rem;
   }
 }
