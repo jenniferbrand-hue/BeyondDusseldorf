@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const photos = GALLERY_PHOTOS.map((photo) => ({
     ...photo,
-    src: `images/gallery/gallery-${String(photo.id).padStart(2, "0")}.jpg`,
-    alt: photo.title,
+    src: photo.image || `images/gallery/gallery-${String(photo.id).padStart(2, "0")}.jpg`,
+    alt: `${photo.title}, Düsseldorf`,
   }));
 
   let currentIndex = 0;

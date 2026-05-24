@@ -9,6 +9,7 @@ const GALLERY_PHOTOS = [
   {
     id: 2,
     title: "Kiefernstraße",
+    image: "images/home-gallery/kiefernstrasse-facade.png",
     caption: "De meest kleurrijke straat van Düsseldorf.",
     description:
       "Hele gevels zijn bedekt met cartoonachtige figuren en felle patronen, waaronder het huis met nummer 21. De sfeer is alternatief, creatief en fotogeniek. Wandel rustig door en ontdek bij elke deur een ander kunstwerk."
@@ -222,5 +223,53 @@ const GALLERY_PHOTOS = [
     caption: "Kunst en natuur in harmonie.",
     description:
       "In een rond wit paviljoen staan donkere bronzen sculpturen op houten platformen, omlijst door ronde ramen naar het park. Licht en schaduw wisselen constant. Wandel daarna over het eiland tussen de andere paviljoens."
+  },
+  {
+    id: 33,
+    title: "Street art mural",
+    image: "images/home-gallery/street-art-mural.jpg",
+    caption: "Regenboog en melkweg op een stadsgevel.",
+    description:
+      "Op een gebouw in Düsseldorf stroomt een cirkelvormige melkweg over in verticale regenboogstrepen langs de gevel. Street art op grote schaal — typisch voor de creatieve buurten van de stad."
+  },
+  {
+    id: 34,
+    title: "Pic You fotowand",
+    image: "images/home-gallery/pic-you-wall.jpg",
+    caption: "Hart van foto booth-strips.",
+    description:
+      "Bij Pic You vullen bezoekers een hartvormige muur met hun strips — duizenden herinneringen op één plek. De neon-sign en roze accenten maken het meteen herkenbaar."
+  },
+  {
+    id: 35,
+    title: "Photo booth strips",
+    image: "images/home-gallery/photo-strips-hand.jpg",
+    caption: "Klassieke strips om mee te nemen.",
+    description:
+      "Twee strips in roze en zwart met groepsfoto’s — zo ga je de stad in met een souvenir in de hand. Pic You en vergelijkbare booths zitten verspreid over Düsseldorf."
+  },
+  {
+    id: 36,
+    title: "Pic You shop",
+    image: "images/home-gallery/pic-you-shop.jpg",
+    caption: "Neon, spiegels en tote bags.",
+    description:
+      "In de Pic You-shop hangen tote bags, patches en accessoires aan een pegboard. De roze gloeiende spiegel en donkere muren geven een speelse, Instagram-waardige sfeer."
+  },
+  {
+    id: 37,
+    title: "Photo strips flatlay",
+    image: "images/home-gallery/photo-strips-flatlay.jpg",
+    caption: "Verschillende layouts en kleuren.",
+    description:
+      "Een flatlay van strips in allerlei formaten — met kersenbloesem-randen, stippen en zwarte achtergronden. Laat zien hoe gevarieerd een photo booth-bezoek kan zijn."
+  },
+  {
+    id: 38,
+    title: "Patch shop",
+    image: "images/home-gallery/patches-shop.jpg",
+    caption: "Honderden patches om zelf te stylen.",
+    description:
+      "Houten vakjes vol geborduurde patches: letters, cijfers, dieren en food-icons. Populair om tassen of jassen te personaliseren — vaak in de buurt van creatieve winkels en photo booths."
   }
 ];

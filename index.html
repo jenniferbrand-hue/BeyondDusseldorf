@@ -3,7 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beyond Düsseldorf</title>
+  <title>Beyond Düsseldorf — Ontdek hidden gems &amp; reistips</title>
+  <meta name="description" content="Ontdek Düsseldorf voorbij de toeristische routes. Hidden gems, praktische tips, foto's en alles over de stad aan de Rijn.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://beyonddusseldorf.nl/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:site_name" content="Beyond Düsseldorf">
+  <meta property="og:title" content="Beyond Düsseldorf — Ontdek hidden gems &amp; reistips">
+  <meta property="og:description" content="Ontdek Düsseldorf voorbij de toeristische routes. Hidden gems, praktische tips, foto's en alles over de stad aan de Rijn.">
+  <meta property="og:url" content="https://beyonddusseldorf.nl/">
+  <meta property="og:image" content="https://beyonddusseldorf.nl/images/slideshow/slide-dragon-mural.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Beyond Düsseldorf — Ontdek hidden gems &amp; reistips">
+  <meta name="twitter:description" content="Ontdek Düsseldorf voorbij de toeristische routes. Hidden gems, praktische tips, foto's en alles over de stad aan de Rijn.">
+  <meta name="twitter:image" content="https://beyonddusseldorf.nl/images/slideshow/slide-dragon-mural.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://beyonddusseldorf.nl/#website",
+        "url": "https://beyonddusseldorf.nl/",
+        "name": "Beyond Düsseldorf",
+        "description": "Ontdek Düsseldorf voorbij de toeristische routes met hidden gems, tips en foto's.",
+        "inLanguage": "nl-NL"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://beyonddusseldorf.nl/#organization",
+        "name": "Beyond Düsseldorf",
+        "url": "https://beyonddusseldorf.nl/",
+        "email": "info@beyonddusseldorf.nl",
+        "logo": "https://beyonddusseldorf.nl/logo.png"
+      }
+    ]
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="style.css">
@@ -17,34 +54,31 @@
   </a>
 
   <ul class="nav-links">
-    <li><a href="#over-dusseldorf">Over Düsseldorf</a></li>
-    <li><a href="#hidden-gems">Hidden gems</a></li>
+    <li><a href="over-dusseldorf.html">Over Düsseldorf</a></li>
+    <li><a href="hidden-gems.html">Hidden gems</a></li>
     <li><a href="fotogalerij.html">Fotogalerij</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<a href="#hidden-gems" class="info-btn">Local<br>tips</a>
+<a href="hidden-gems.html" class="info-btn">Ontdek!</a>
 
 <header class="hero" id="home">
   <div class="hero-media">
     <div class="hero-slideshow" aria-hidden="true">
-      <img src="images/slideshow/slide-dragon-mural.jpg" alt="" class="hero-slide is-active">
-      <img src="images/slideshow/slide-street-art.jpg" alt="" class="hero-slide">
-      <img src="images/slideshow/slide-botanical-garden.jpg" alt="" class="hero-slide">
-      <img src="images/slideshow/slide-k21-art.jpg" alt="" class="hero-slide">
-      <img src="images/slideshow/slide-kaiserteich.jpg" alt="" class="hero-slide">
-      <img src="images/slideshow/slide-rheinturm.jpg" alt="" class="hero-slide">
+      <img src="images/slideshow/slide-botanical-garden.jpg" alt="Botanische tuin Düsseldorf" class="hero-slide is-active">
+      <img src="images/slideshow/slide-kiefernstrasse.png" alt="Kleurrijke street art op gevels aan de Kiefernstraße, Düsseldorf" class="hero-slide">
+      <img src="images/slideshow/slide-speescher-graben.jpg" alt="Spee'scher Graben met Rheinturm, Düsseldorf" class="hero-slide">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-    <p>Ontdek wat andere missen</p>
+    <p>Ontdek wat andere missen!</p>
     <h1>Beyond Düsseldorf</h1>
 
-    <div class="search">
-      <input type="text" placeholder="Zoek hidden gems, wijken of routes...">
-      <button onclick="searchWebsite()">Zoek</button>
-    </div>
+    <form class="search" role="search" action="#" method="get">
+      <input type="search" name="q" id="site-search" placeholder="Zoek hidden gems, wijken of routes..." aria-label="Zoek op de site" autocomplete="off">
+      <button type="submit">Zoek</button>
+    </form>
     </div>
     <div class="hero-wave" aria-hidden="true"></div>
   </div>
@@ -56,7 +90,7 @@
     <div class="section-title">
       <div>
         <h2>Hidden gems</h2>
-        <h4>Niet standaard, wel Düsseldorf</h4>
+        <p class="section-subtitle">Niet standaard, wel Düsseldorf</p>
       </div>
     </div>
 
@@ -64,77 +98,115 @@
       <button type="button" class="gem-nav gem-nav-prev" aria-label="Vorige hidden gem">&lsaquo;</button>
       <div class="gem-track" tabindex="0">
         <article class="gem-card">
-          <img src="images/gem-little-tokyo.webp" alt="Matcha-drankjes bij Wakaba café" class="gem-image">
-          <div class="gem-overlay">
-            <h3>Little Tokyo</h3>
-            <p>Japanse winkels, ramenbars en unieke sfeer midden in Düsseldorf.</p>
-          </div>
+          <a href="hidden-gems.html#little-tokyo" class="gem-card-link">
+            <img src="images/gem-little-tokyo.webp" alt="Matcha-drankjes bij Wakaba café" class="gem-image">
+            <div class="gem-overlay">
+              <h3>Little Tokyo</h3>
+              <p>Japanse winkels, ramenbars en unieke sfeer midden in Düsseldorf.</p>
+              <span class="gem-more">Locatie &amp; tips</span>
+            </div>
+          </a>
         </article>
 
         <article class="gem-card">
-          <img src="images/gem-kiefernstrasse.webp" alt="Kleurrijke street art op een gevel" class="gem-image">
-          <div class="gem-overlay">
-            <h3>Kiefernstraße</h3>
-            <p>Street art, alternatieve cultuur en kleurrijke gevels.</p>
-          </div>
+          <a href="hidden-gems.html#kiefernstrasse" class="gem-card-link">
+            <img src="images/home-gallery/kiefernstrasse-facade.png" alt="Kleurrijke cartoon street art op gevels aan de Kiefernstraße" class="gem-image">
+            <div class="gem-overlay">
+              <h3>Kiefernstraße</h3>
+              <p>Street art, alternatieve cultuur en kleurrijke gevels.</p>
+              <span class="gem-more">Locatie &amp; tips</span>
+            </div>
+          </a>
         </article>
 
         <article class="gem-card">
-          <img src="images/gem-rheinpark.webp" alt="K21 Ständehaus met water en reflectie" class="gem-image">
-          <div class="gem-overlay">
-            <h3>Rheinpark Golzheim</h3>
-            <p>Rustige plek aan de Rijn met uitzicht en ruimte.</p>
-          </div>
+          <a href="hidden-gems.html#pic-you" class="gem-card-link">
+            <img src="images/home-gallery/pic-you-wall.jpg" alt="Fotowand bij Pic You self photo booth" class="gem-image">
+            <div class="gem-overlay">
+              <h3>Pic You</h3>
+              <p>Self photo booth, strips en een kleurrijke fotowand.</p>
+              <span class="gem-more">Locatie &amp; tips</span>
+            </div>
+          </a>
         </article>
 
         <article class="gem-card">
-          <img src="images/gem-immermannstrasse.webp" alt="Aziatische muurschildering met draak" class="gem-image">
-          <div class="gem-overlay">
-            <h3>Immermannstraße</h3>
-            <p>De grootste Little Tokyo van Europa: Aziatische winkels en restaurants.</p>
-          </div>
+          <a href="hidden-gems.html#rheinpark-golzheim" class="gem-card-link">
+            <img src="images/gem-rheinpark.webp" alt="K21 Ständehaus met water en reflectie" class="gem-image">
+            <div class="gem-overlay">
+              <h3>Rheinpark Golzheim</h3>
+              <p>Rustige plek aan de Rijn met uitzicht en ruimte.</p>
+              <span class="gem-more">Locatie &amp; tips</span>
+            </div>
+          </a>
         </article>
 
         <article class="gem-card">
-          <img src="images/gem-hanaro.webp" alt="Hanaro Markt winkelgevel" class="gem-image">
-          <div class="gem-overlay">
-            <h3>Hanaro Markt</h3>
-            <p>Koreaanse en Aziatische supermarkt met street food om de hoek.</p>
-          </div>
+          <a href="hidden-gems.html#immermannstrasse" class="gem-card-link">
+            <img src="images/gem-immermannstrasse.webp" alt="Aziatische muurschildering met draak" class="gem-image">
+            <div class="gem-overlay">
+              <h3>Immermannstraße</h3>
+              <p>De grootste Little Tokyo van Europa: Aziatische winkels en restaurants.</p>
+              <span class="gem-more">Locatie &amp; tips</span>
+            </div>
+          </a>
         </article>
 
         <article class="gem-card">
-          <img src="images/gem-kunst.webp" alt="Entreekaartje K20 Kunstsammlung" class="gem-image">
-          <div class="gem-overlay">
-            <h3>K20 / K21</h3>
-            <p>Wereldklasse moderne kunst in het historische Ständehaus.</p>
-          </div>
+          <a href="hidden-gems.html#hanaro-markt" class="gem-card-link">
+            <img src="images/gem-hanaro.webp" alt="Hanaro Markt winkelgevel" class="gem-image">
+            <div class="gem-overlay">
+              <h3>Hanaro Markt</h3>
+              <p>Koreaanse en Aziatische supermarkt met street food om de hoek.</p>
+              <span class="gem-more">Locatie &amp; tips</span>
+            </div>
+          </a>
         </article>
 
         <article class="gem-card">
-          <img src="images/gem-botanisch.webp" alt="Botanische tuin met glazen koepel" class="gem-image">
-          <div class="gem-overlay">
-            <h3>Botanische tuin</h3>
-            <p>Tropische planten onder een iconische glazen koepel op de campus.</p>
-          </div>
+          <a href="hidden-gems.html#k20-k21" class="gem-card-link">
+            <img src="images/gem-kunst.webp" alt="Entreekaartje K20 Kunstsammlung" class="gem-image">
+            <div class="gem-overlay">
+              <h3>K20 / K21</h3>
+              <p>Wereldklasse moderne kunst in het historische Ständehaus.</p>
+              <span class="gem-more">Locatie &amp; tips</span>
+            </div>
+          </a>
         </article>
 
         <article class="gem-card">
-          <img src="images/gem-rheinturm.webp" alt="Park met Rheinturm en reflectie" class="gem-image">
-          <div class="gem-overlay">
-            <h3>Rheinturm &amp; park</h3>
-            <p>Iconisch uitzichtpunt en groene oevers langs het water.</p>
-          </div>
+          <a href="hidden-gems.html#botanische-tuin" class="gem-card-link">
+            <img src="images/gem-botanisch.webp" alt="Botanische tuin met glazen koepel" class="gem-image">
+            <div class="gem-overlay">
+              <h3>Botanische tuin</h3>
+              <p>Tropische planten onder een iconische glazen koepel op de campus.</p>
+              <span class="gem-more">Locatie &amp; tips</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gem-card">
+          <a href="hidden-gems.html#rheinturm-park" class="gem-card-link">
+            <img src="images/gem-rheinturm.webp" alt="Park met Rheinturm en reflectie" class="gem-image">
+            <div class="gem-overlay">
+              <h3>Rheinturm &amp; park</h3>
+              <p>Iconisch uitzichtpunt en groene oevers langs het water.</p>
+              <span class="gem-more">Locatie &amp; tips</span>
+            </div>
+          </a>
         </article>
       </div>
       <button type="button" class="gem-nav gem-nav-next" aria-label="Volgende hidden gem">&rsaquo;</button>
     </div>
+    <p class="gems-cta">
+      <a href="hidden-gems.html" class="primary">Alle locaties met adres &amp; tips</a>
+    </p>
   </section>
 
   <section class="city-highlight" id="over-dusseldorf">
     <div class="city-highlight__inner">
       <div class="city-content">
-        <h2 class="city-title">Ontdek wat andere missen</h2>
+        <h2 class="city-title">Ontdek wat andere missen!</h2>
         <p class="city-eyebrow">Over Düsseldorf</p>
         <p class="city-text">
           De hoofdstad van Noordrijn-Westfalen aan de Rijn telt ruim 650.000 inwoners.
@@ -144,7 +216,7 @@
           Mode, kunst, Japanse cultuur en de Rijnpromenade maken Düsseldorf tot een
           stad die je het beste ontdekt voorbij de bekende routes.
         </p>
-        <a href="#stad-info" class="btn-over">Over Düsseldorf</a>
+        <a href="over-dusseldorf.html" class="btn-over">Over Düsseldorf</a>
       </div>
       <div class="city-visual">
         <div class="city-visual__blobs" aria-hidden="true"></div>
@@ -153,31 +225,33 @@
     </div>
   </section>
 
-  <section class="intro" id="stad-info">
-    <div>
-      <h2>Ontdek Düsseldorf voorbij de bekende plekken</h2>
-      <h4>Hidden gems, lokale tips en onverwachte routes</h4>
-
-      <p>
-        Beyond Düsseldorf laat je de stad zien zoals locals haar kennen.
-        Niet alleen de bekende trekpleisters, maar juist creatieve buurten,
-        rustige plekken, kleine cafés, street art en bijzondere verhalen.
-      </p>
-
-      <p>
-        Deze website helpt bezoekers om verborgen parels van Düsseldorf te vinden
-        en de stad op een andere manier te beleven.
-      </p>
-
-      <a href="#hidden-gems" class="primary">Bekijk hidden gems</a>
-    </div>
-
-    <div class="image-box">
-      <img src="images/intro.webp" alt="Park met Rheinturm en reflectie in het water, Düsseldorf">
+  <section class="gallery-highlight" id="fotogalerij">
+    <div class="gallery-highlight__inner">
+      <div class="gallery-highlight__mosaic">
+        <a href="fotogalerij.html" class="gallery-highlight__photo gallery-highlight__photo--main">
+          <img src="images/gallery/gallery-15.jpg" alt="Oldtimercollectie in Classic Remise, Düsseldorf" loading="lazy">
+        </a>
+        <a href="fotogalerij.html" class="gallery-highlight__photo">
+          <img src="images/gallery/gallery-31.jpg" alt="Keramiekwinkel met handgemaakt aardewerk, Düsseldorf" loading="lazy">
+        </a>
+        <a href="fotogalerij.html" class="gallery-highlight__photo">
+          <img src="images/gallery/gallery-27.jpg" alt="Atrium K21 Ständehaus, Düsseldorf" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-highlight__content">
+        <p class="city-eyebrow">Fotogalerij</p>
+        <h2 class="city-title">Foto's van Düsseldorf</h2>
+        <p class="city-text">
+          Meer dan dertig foto’s van street art, Little Tokyo, kunst en groen langs de Rijn —
+          elk beeld met een korte uitleg.
+        </p>
+        <p class="city-text">
+          Een sfeerimpressie vóór je de stad intrekt.
+        </p>
+        <a href="fotogalerij.html" class="btn-over">Bekijk fotogalerij</a>
+      </div>
     </div>
   </section>
-
-  <div class="section-divider" aria-hidden="true"></div>
 
 </main>
 
@@ -200,13 +274,27 @@
   <div class="footer-block footer-social">
     <h4>Volg ons</h4>
     <ul class="social-links">
-      <li><a href="#">Instagram</a></li>
-      <li><a href="#">TikTok</a></li>
-      <li><a href="#">Pinterest</a></li>
+      <li>
+        <a href="#" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#" aria-label="Pinterest" title="Pinterest">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.403.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        </a>
+      </li>
     </ul>
   </div>
 </footer>
 
+<script src="hidden-gems-data.js" defer></script>
+<script src="gallery-data.js" defer></script>
 <script src="script.js" defer></script>
 </body>
 </html>
