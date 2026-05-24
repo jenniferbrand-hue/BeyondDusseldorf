@@ -191,11 +191,64 @@ function scrollToContact(options = {}) {
     return;
   }
 
+  closeMobileNav();
   window.scrollTo({ top: getContactScrollTop(), behavior });
 
   if (updateHash && window.location.hash !== "#contact") {
     history.replaceState(null, "", "#contact");
   }
+}
+
+function closeMobileNav() {
+  const nav = document.getElementById("site-nav");
+  const toggle = document.querySelector(".nav-toggle");
+
+  if (!nav || !toggle) {
+    return;
+  }
+
+  nav.classList.remove("is-open");
+  toggle.classList.remove("is-open");
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-label", "Menu openen");
+  document.body.classList.remove("nav-open");
+}
+
+function setupMobileNav() {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("site-nav");
+
+  if (!toggle || !nav) {
+    return;
+  }
+
+  function setMobileNavOpen(isOpen) {
+    nav.classList.toggle("is-open", isOpen);
+    toggle.classList.toggle("is-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "Menu sluiten" : "Menu openen");
+    document.body.classList.toggle("nav-open", isOpen);
+  }
+
+  toggle.addEventListener("click", () => {
+    setMobileNavOpen(!nav.classList.contains("is-open"));
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMobileNavOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMobileNavOpen(false);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+      setMobileNavOpen(false);
+    }
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -266,4 +319,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.location.hash === "#contact") {
     scrollToContact({ behavior: "auto", updateHash: false });
   }
+
+  setupMobileNav();
 });
