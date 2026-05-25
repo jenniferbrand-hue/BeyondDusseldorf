@@ -27,6 +27,8 @@ body {
   background-color: #f8f1e7;
   color: var(--dark);
   overflow-x: clip;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 a {
@@ -40,10 +42,8 @@ button {
 }
 
 .hero {
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
+  max-width: 100%;
   position: relative;
 }
 
@@ -235,9 +235,10 @@ body.nav-open {
 }
 
 .hero-content {
-  width: min(90%, 75rem);
+  width: min(100%, 75rem);
+  max-width: 100%;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 3rem clamp(1rem, 4vw, 2rem);
   text-align: center;
   position: relative;
   z-index: 2;
@@ -253,6 +254,8 @@ body.nav-open {
 .hero-content h1 {
   font-size: clamp(2.5rem, 7vw, 4.5rem);
   margin: 1rem 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .search {
@@ -296,8 +299,10 @@ body.nav-open {
 
 main {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   background-color: #f8f1e7;
-  padding: 0 clamp(1.5rem, 7%, 5rem) 5rem;
+  padding: 0 clamp(1rem, 5%, 3rem) 5rem;
 }
 
 .city-highlight {
@@ -312,6 +317,7 @@ main {
   align-items: center;
   max-width: 75rem;
   margin: 0 auto;
+  min-width: 0;
 }
 
 .city-content {
@@ -322,6 +328,7 @@ main {
   align-items: flex-start;
   text-align: left;
   max-width: 26rem;
+  min-width: 0;
   padding: 0.5rem 0;
 }
 
@@ -348,7 +355,7 @@ main {
   margin-bottom: 1.15rem;
   font-size: clamp(0.95rem, 1.25vw, 1.02rem);
   line-height: 1.7;
-  max-width: 34rem;
+  max-width: 100%;
 }
 
 .city-text:last-of-type {
@@ -382,10 +389,6 @@ main {
   overflow: visible;
 }
 
-.city-visual__blobs {
-  display: none;
-}
-
 .city-visual img {
   height: clamp(24rem, 50vh, 32rem);
   width: auto;
@@ -395,6 +398,10 @@ main {
   object-position: right center;
   margin-left: auto;
   transform: translateX(15cm);
+}
+
+.city-visual__blobs {
+  display: none;
 }
 
 .intro {
@@ -465,6 +472,8 @@ p {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
+  min-width: 0;
+  width: 100%;
 }
 
 .gems {
@@ -484,6 +493,9 @@ p {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .gem-track {
@@ -495,6 +507,8 @@ p {
   -webkit-overflow-scrolling: touch;
   padding: 0.5rem 0 1.5rem;
   flex: 1;
+  min-width: 0;
+  max-width: 100%;
   scrollbar-width: thin;
   scrollbar-color: var(--coral) var(--light);
 }
@@ -605,6 +619,8 @@ p {
   max-width: 75rem;
   margin: 0 auto;
   padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(1rem, 3vw, 2rem);
+  min-width: 0;
+  width: 100%;
 }
 
 .gallery-highlight__inner {
@@ -612,6 +628,7 @@ p {
   grid-template-columns: minmax(0, 52%) minmax(0, 48%);
   gap: clamp(2rem, 4vw, 3rem);
   align-items: center;
+  min-width: 0;
 }
 
 .gallery-highlight__content {
@@ -620,6 +637,7 @@ p {
   align-items: flex-start;
   text-align: left;
   max-width: 26rem;
+  min-width: 0;
 }
 
 .gallery-highlight__mosaic {
@@ -661,9 +679,8 @@ p {
   margin-top: clamp(5rem, 10vw, 7rem);
   background: var(--blue);
   height: clamp(2.5rem, 4vw, 3.5rem);
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
+  max-width: 100%;
 }
 
 .events {
@@ -686,14 +703,17 @@ p {
 
 footer {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   background: var(--blue);
   color: white;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: clamp(2rem, 5%, 3.5rem);
   align-items: center;
-  padding: clamp(2rem, 3.5vw, 2.75rem) clamp(1.5rem, 6%, 5rem);
+  padding: clamp(2rem, 3.5vw, 2.75rem) clamp(1rem, 5%, 3rem);
   scroll-margin-top: calc(var(--nav-height) + 1rem);
+  overflow-wrap: break-word;
 }
 
 .footer-logo-col {
@@ -859,7 +879,34 @@ footer {
   }
 
   main {
-    padding: 0 6% 4rem;
+    padding: 0 max(1rem, 5%) 4rem;
+    overflow-x: clip;
+  }
+
+  .gem-card {
+    flex: 0 0 min(88%, 18rem);
+  }
+
+  .gems-cta {
+    padding: 0 0.25rem;
+  }
+
+  .btn-over,
+  .primary {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .city-title,
+  .city-text,
+  .section-subtitle,
+  h2,
+  p {
+    max-width: 100%;
+  }
+
+  .city-highlight {
+    overflow: hidden;
   }
 
   .city-highlight__inner {
@@ -874,10 +921,13 @@ footer {
   .city-visual {
     justify-content: center;
     min-height: auto;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .city-visual img {
     height: clamp(18rem, 55vw, 26rem);
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     transform: none;
@@ -949,21 +999,32 @@ footer {
 
 @media (max-width: 550px) {
   .hero-content {
-    padding: 2.5rem 0;
+    padding: 2.5rem 1rem;
   }
 
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.65rem, 8.5vw, 2.35rem);
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    padding: 0 0.25rem;
   }
 
   .search {
     flex-direction: column;
     border-radius: 1.5rem;
-    width: min(94%, 30rem);
+    width: 100%;
+    max-width: 100%;
   }
 
   .search input {
     font-size: 1rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .search input::placeholder {
+    font-size: 0.9rem;
   }
 
   .search button {
@@ -1024,7 +1085,7 @@ footer {
 .gallery-section {
   max-width: 75rem;
   margin: 0 auto;
-  padding: 0 clamp(1.5rem, 7%, 5rem);
+  padding: 0 clamp(1rem, 5%, 3rem);
 }
 
 .gallery-header {
@@ -1257,7 +1318,7 @@ footer {
 .gems-page-header {
   max-width: 42rem;
   margin: 0 auto 3rem;
-  padding: 0 clamp(1.5rem, 7%, 5rem);
+  padding: 0 clamp(1rem, 5%, 3rem);
 }
 
 .gems-page-header h1 {
@@ -1285,7 +1346,7 @@ footer {
 .gems-detail-list {
   max-width: 75rem;
   margin: 0 auto;
-  padding: 0 clamp(1.5rem, 7%, 5rem);
+  padding: 0 clamp(1rem, 5%, 3rem);
   display: flex;
   flex-direction: column;
   gap: clamp(2rem, 4vw, 3rem);
@@ -1322,7 +1383,8 @@ footer {
 }
 
 .gem-detail__content {
-  padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2rem) 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  min-width: 0;
 }
 
 .gem-detail__wijk {
@@ -1452,7 +1514,7 @@ footer {
   align-items: center;
   max-width: 75rem;
   margin: 0 auto 3.5rem;
-  padding: 0 clamp(1.5rem, 7%, 5rem);
+  padding: 0 clamp(1rem, 5%, 3rem);
 }
 
 .over-page-hero__text h1 {
@@ -1492,7 +1554,7 @@ footer {
 .over-facts {
   max-width: none;
   margin: 0 0 3rem;
-  padding: clamp(2rem, 4vw, 2.75rem) clamp(1.5rem, 7%, 5rem);
+  padding: clamp(2rem, 4vw, 2.75rem) clamp(1rem, 5%, 3rem);
   background: rgba(255, 255, 255, 0.55);
   border-block: 1px solid rgba(13, 55, 87, 0.08);
 }
@@ -1524,7 +1586,7 @@ footer {
 .over-block {
   max-width: 75rem;
   margin: 0 auto 2.5rem;
-  padding: 0 clamp(1.5rem, 7%, 5rem);
+  padding: 0 clamp(1rem, 5%, 3rem);
 }
 
 .over-section-title {
